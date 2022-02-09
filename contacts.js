@@ -23,7 +23,7 @@ const getContactById = async (contactId) => {
 }
 const  addContact=async(name, email, phone)=> {
     const contacts = await listContacts()
-    const newContact = { name, email, phone, id:nanoid(5) }
+    const newContact = {  id:nanoid(5),name, email, phone }
     contacts.push(newContact)
     await fs.writeFile(contactsPath, JSON.stringify(contacts))
     return newContact
